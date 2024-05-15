@@ -28,9 +28,14 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean --onSuccess 'cp -r src/assets dist'"
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean --onSuccess 'cp -r src/assets dist'",
+    "lint": "eslint .",
+    "format": "eslint --fix .",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "@pulumi/aws": "^6.0.0",

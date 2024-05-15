@@ -13,9 +13,9 @@ export interface SentryWebhookArgs {
 }
 
 const dirname =
-  typeof __dirname !== 'undefined'
-    ? __dirname
-    : path.dirname(url.fileURLToPath(import.meta.url))
+  typeof __dirname === 'undefined'
+    ? path.dirname(url.fileURLToPath(import.meta.url))
+    : __dirname
 
 /**
  * @example

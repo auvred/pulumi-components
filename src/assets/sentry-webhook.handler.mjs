@@ -1,9 +1,11 @@
+/* eslint-disable import/no-unresolved, no-console */
 import assert from 'node:assert/strict'
 import crypto from 'node:crypto'
+import process from 'node:process'
 
 import { GetParameterCommand, SSMClient } from '@aws-sdk/client-ssm'
 
-const VARIABLES_PARAMETER_ARN = process.env.VARIABLES_PARAMETER_ARN
+const { VARIABLES_PARAMETER_ARN } = process.env
 assert.ok(VARIABLES_PARAMETER_ARN)
 
 const {
@@ -116,6 +118,7 @@ async function sendTelegramMessage({ chatId, threadId, text }) {
       },
       body: JSON.stringify({
         chat_id: chatId,
+        // eslint-disable-next-line eqeqeq
         ...(threadId != null && { message_thread_id: threadId }),
         text,
         parse_mode: 'MarkdownV2',
@@ -129,7 +132,9 @@ async function sendTelegramMessage({ chatId, threadId, text }) {
     )
     throw new Error('Cannot send Telegram message')
   }
+  // Avoid memory leak https://undici.nodejs.org/#/?id=garbage-collection
+  // eslint-disable-next-line unused-imports/no-unused-vars
   for await (const _chunk of response.body) {
-    // Avoid memory leak https://undici.nodejs.org/#/?id=garbage-collection
+    //
   }
 }
