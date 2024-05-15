@@ -126,6 +126,7 @@ export class SentryWebhook extends pulumi.ComponentResource {
         functionName: handler.name,
         maximumRetryAttempts: 0,
       },
+      { parent: this },
     )
     new aws.cloudwatch.LogGroup(
       `${name}-handler-log-group`,
