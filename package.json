@@ -35,6 +35,7 @@
     "build": "tsup src/index.ts --format cjs,esm --dts --clean --onSuccess 'cp -r src/assets dist'",
     "lint": "eslint .",
     "format": "eslint --fix .",
+    "release": "npx bumpp",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
