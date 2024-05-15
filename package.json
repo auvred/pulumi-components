@@ -8,15 +8,10 @@
   "homepage": "https://github.com/auvred/pulumi-components#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/auvred/magic-esquery"
+    "url": "https://github.com/auvred/pulumi-components"
   },
   "keywords": [
-    "ast",
-    "ecmascript",
-    "esquery",
-    "eslint",
-    "typescript",
-    "estree"
+    "pulumi"
   ],
   "exports": {
     ".": {
