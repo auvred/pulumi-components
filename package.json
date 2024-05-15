@@ -14,7 +14,7 @@
   "types": "./dist/index.d.ts",
   "files": ["dist"],
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean"
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean --onSuccess 'cp -r src/assets dist'"
   },
   "peerDependencies": {
     "@pulumi/aws": "^6.0.0",
