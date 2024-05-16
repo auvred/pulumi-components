@@ -27,20 +27,27 @@ const {
 
 export async function handler(event) {
   console.log('got event:', JSON.stringify(event, null, 2))
+  if (event.headers['sentry-hook-resource'] !== 'event_alert') {
+    console.log("event resource doesn't match. skipping...")
+    return
+  }
+
   if (
-    event.headers['sentry-hook-resource'] !== 'event_alert' ||
     crypto
       .createHmac('sha256', SENTRY_CLIENT_SECRET)
       .update(event.body, 'utf8')
       .digest('hex') !== event.headers['sentry-hook-signature']
   ) {
+    console.log("signature doesn't match. skipping...")
     return
   }
 
   // https://docs.sentry.io/organization/integrations/integration-platform/webhooks/issue-alerts/
+  console.log('parsing event body...')
   const { issue_url } = JSON.parse(event.body).data.event
 
   // https://docs.sentry.io/api/events/retrieve-an-issue/
+  console.log('fetching sentry issue...')
   const response = await fetch(issue_url, {
     headers: {
       Authorization: `Bearer ${SENTRY_INTEGRATION_TOKEN}`,
@@ -61,6 +68,7 @@ export async function handler(event) {
     project: { name: projectName },
   } = await response.json()
 
+  console.log('sending Telegram message...')
   await sendTelegramMessage({
     chatId: TELEGRAM_CHAT_ID,
     threadId: (() => {
