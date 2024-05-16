@@ -58,7 +58,7 @@ export class SentryWebhook extends pulumi.ComponentResource {
       `${name}-ssm-parameter`,
       {
         type: aws.ssm.ParameterType.SecureString,
-        value: JSON.stringify({
+        value: pulumi.jsonStringify({
           SENTRY_INTEGRATION_TOKEN: sentryIntegrationToken,
           SENTRY_CLIENT_SECRET: sentryClientSecret,
           TELEGRAM_BOT_TOKEN: telegramBotToken,
