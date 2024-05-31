@@ -39,7 +39,7 @@ export const CloudFrontManagedOriginRequestPolicy = {
 } as const
 
 /** @see {@link https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-response-headers-policies.html} */
-export const CloudFrontManagedResponseHeadersPolicies = {
+export const CloudFrontManagedResponseHeadersPolicy = {
   /** @see {@link https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-response-headers-policies.html#managed-response-headers-policies-cors-security} */
   CORS_AND_SECURITY_HEADERS_POLICY: 'e61eb60c-9c35-4d20-a928-2b84e02af89c',
   /** @see {@linkhttps://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-response-headers-policies.html#managed-response-headers-policies-cors-preflight} */
