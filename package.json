@@ -1,6 +1,6 @@
 {
   "name": "@auvred/pulumi-components",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "packageManager": "pnpm@9.1.1",
   "description": "A collection of higher level Pulumi components",
   "author": "auvred <aauvred@gmail.com> (https://github.com/auvred/)",
