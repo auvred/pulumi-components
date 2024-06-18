@@ -52,10 +52,3 @@ export const CloudFrontManagedResponseHeadersPolicy = {
   /** @see {@linkhttps://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-response-headers-policies.html#managed-response-headers-policies-cors} */
   SIMPLE_CORS: '60669652-455b-4ae9-85a4-c4c02393f86c',
 } as const
-
-/**
- * For Route53 aliases
- *
- * @see {@link https://docs.aws.amazon.com/general/latest/gr/cf_region.html#cf_region_cfront}
- */
-export const CloudFrontHostedZoneId = 'Z2FDTNDATAQYW2'
