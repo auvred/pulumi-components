@@ -6,7 +6,7 @@ export type RewriteForSpaArgs = Record<string, never>
 
 export class RewriteForSpa extends aws.cloudfront.Function {
   protected static cachedSingleton: RewriteForSpa | null = null
-  static singletone() {
+  static singletone(): RewriteForSpa {
     return (
       this.cachedSingleton ??
       (this.cachedSingleton = new RewriteForSpa(
