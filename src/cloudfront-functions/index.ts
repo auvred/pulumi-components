@@ -72,9 +72,7 @@ export class ReplaceInURI extends aws.cloudfront.Function {
     args: ReplaceInURIArgs,
     opts?: pulumi.ComponentResourceOptions,
   ) {
-    const escapedPattern = (
-      typeof args.pattern === 'string' ? new RegExp(args.pattern) : args.pattern
-    ).toString()
+    const escapedPattern = args.pattern.toString()
 
     super(
       name,
