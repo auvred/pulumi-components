@@ -52,3 +52,16 @@ export const CloudFrontManagedResponseHeadersPolicy = {
   /** @see {@linkhttps://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-response-headers-policies.html#managed-response-headers-policies-cors} */
   SIMPLE_CORS: '60669652-455b-4ae9-85a4-c4c02393f86c',
 } as const
+
+/** @see {@link https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesAllowedHTTPMethods} */
+export const CloudFrontAllowedMethods = {
+  GET_HEAD: ['GET', 'HEAD'],
+  GET_HEAD_OPTIONS: ['GET', 'HEAD', 'OPTIONS'],
+  ALL: ['HEAD', 'DELETE', 'POST', 'GET', 'OPTIONS', 'PUT', 'PATCH'],
+} as const
+
+/** @see {@link https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCachedHTTPMethods} */
+export const CloudFrontCachedMethods = {
+  GET_HEAD: ['GET', 'HEAD'],
+  GET_HEAD_OPTIONS: ['GET', 'HEAD', 'OPTIONS'],
+} as const
