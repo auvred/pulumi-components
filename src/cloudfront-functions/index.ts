@@ -84,7 +84,7 @@ export class ReplaceInURI extends aws.cloudfront.Function {
   )});
   return request;
 }`,
-        runtime: 'cloudfront-js-2',
+        runtime: 'cloudfront-js-2.0',
         publish: true,
       },
       opts,
