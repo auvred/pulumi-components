@@ -70,7 +70,7 @@ export class SentryCloudFrontTunnel extends pulumi.ComponentResource {
     opts?: pulumi.ComponentResourceOptions,
   ) {
     super(
-      'auvred:sentry-cloudfront-tunnel/SentryCloudFrontTunnel',
+      'auvred:sentry-cloudfront-tunnel:SentryCloudFrontTunnel',
       name,
       args,
       opts,
