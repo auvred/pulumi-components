@@ -9,9 +9,7 @@ export class RewriteForSpa extends aws.cloudfront.Function {
   static singletone(): RewriteForSpa {
     return (
       this.cachedSingleton ??
-      (this.cachedSingleton = new RewriteForSpa(
-        'auvred-cloudfront-functions-singletone',
-      ))
+      (this.cachedSingleton = new RewriteForSpa('auvred-cf-fn-singletone'))
     )
   }
 
