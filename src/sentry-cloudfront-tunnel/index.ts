@@ -69,7 +69,12 @@ export class SentryCloudFrontTunnel extends pulumi.ComponentResource {
     args: SentryCloudFrontTunnelArgs,
     opts?: pulumi.ComponentResourceOptions,
   ) {
-    super('auvred:SentryCloudFrontTunnel', name, args, opts)
+    super(
+      'auvred:sentry-cloudfront-tunnel/SentryCloudFrontTunnel',
+      name,
+      args,
+      opts,
+    )
 
     const viewerRequestFunction = new aws.cloudfront.Function(
       `${name}-function`,

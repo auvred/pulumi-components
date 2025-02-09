@@ -43,7 +43,7 @@ export class SentryWebhook extends pulumi.ComponentResource {
     const telegramBotToken = pulumi.secret(args.telegramBotToken)
 
     super(
-      'auvred:SentryWebhook',
+      'auvred:sentry-webhook:SentryWebhook',
       name,
       {
         ...args,

@@ -34,7 +34,12 @@ export class ValidatedAcmCertificate extends pulumi.ComponentResource {
     args: ValidatedAcmCertificateArgs,
     opts?: pulumi.ComponentResourceOptions,
   ) {
-    super('auvred:ValidatedAcmCertificate', name, args, opts)
+    super(
+      'auvred:validated-acm-certificate:ValidatedAcmCertificate',
+      name,
+      args,
+      opts,
+    )
 
     const childOpts: pulumi.CustomResourceOptions = {
       parent: this,
